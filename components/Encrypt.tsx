@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { encryptFile } from '../crypto/index';
 
 const Encrypt: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -7,10 +8,11 @@ const Encrypt: React.FC = () => {
     if (e.target.files?.[0]) setFile(e.target.files[0]);
   };
 
-  const handleEncrypt = () => {
-    if (!file) return alert("Select a file first!");
-    // placeholder for crypto logic
-    alert(`Encrypting ${file.name}...`);
+  const handleEncrypt = async () => {
+    if (!file) return alert('Select a file first!');
+    const encrypted = await encryptFile(file, 'public-key-placeholder');
+    alert(`File "${file.name}" encrypted!`);
+    // later: provide download link
   };
 
   return (
