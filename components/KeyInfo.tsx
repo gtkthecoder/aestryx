@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const KeyInfo: React.FC = () => (
   <div className="bg-gray-900 p-4 rounded-lg text-white max-w-md mx-auto my-4">
@@ -7,7 +7,8 @@ const KeyInfo: React.FC = () => (
       <strong>Public Key:</strong> Used to lock files. Safe to share.
     </div>
     <div>
-      <strong>Private Key:</strong> Used to unlock files. Never share. Losing it = permanent loss.
+      <strong>Private Key:</strong> Used to unlock files. Never share. Losing it = permanent
+      loss.
     </div>
   </div>
 );
